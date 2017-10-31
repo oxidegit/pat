@@ -78,9 +78,9 @@ AVLTree insert(AVLTree T, int v){
         }else {
             T->left = insert(T->left, v);
             
-            if ((GetHeight(T->left) - GetHeight(T->right))==-2){
+            if ((GetHeight(T->left) - GetHeight(T->right))==2){
                 if (v < T->left->data){
-                    T = singleRightRotation(T);
+                    T = singleLeftRotation(T);
                 }else{
                     T = doubleLeftRightRotation(T);
                 }
